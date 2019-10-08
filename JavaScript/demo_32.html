@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      /*
+      표준 내장 객체의 확장
+      표준 내장 객체는 자바스크립트가 기본적으로 제공하는 객체를 의미
+      */
+
+      /*
+      배열을 확장
+      */
+
+/*
+      var arr = new Array('seoul','new york','ladarkh','pusan','Tsukuba');
+      function getRandomValueFromArray(arr){
+        var index = Math.floor(arr.length* Math.random())
+        return arr[index];
+      }
+      console.log(getRandomValueFromArray(arr));
+*/
+
+      Array.prototype.random = function(){
+        var index = Math.floor(this.length*Math.random());
+        return this[index];
+      }
+      var arr = new Array('seoul','new york','ladarkh','pusan','Tsukuba');
+      console.log(arr.random());
+    </script>
+
+  </body>
+</html>

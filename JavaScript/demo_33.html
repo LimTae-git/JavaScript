@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      //// Object 객체 ////
+/*
+      var grades = {'egoing': 10, 'k8805': 6, 'sorialgi': 80};
+*/
+
+/*
+      // Object.keys() : 배열안에 담겨있는 값들이
+      //어떠한 키,인덱스들을 가지고 있는가에 대한
+      //인덱스들만의 리스트를 만들어서 배열로 리턴해주는 메소드
+      var arr = ["a","b","c"];
+      console.log('Object.keys(arr)',Object.keys(arr));
+      //  "0,1,2"
+
+      var o = {"name": "egoing", "age" : 20, city: "seoul"};
+      console.log('Object.keys(o)',Object.keys(o));
+      //  "name","age","city"
+*/
+/*
+      // Object.prototype.toString()
+      // toString :
+      // 어떤 객체가 담고있는 값이 무엇인지
+      // 사람이 보기 좋게 출력해주는 메소드
+      var o = new Object();
+      console.log('o.toString()',o.toString());
+      // "[Object Object]"
+      var a = new Array(1,2,3);
+      console.log('a.toString()',a.toString());
+      // "1,2,3"
+*/
+
+      // Object 의 확장
+      Object.prototype.contain = function(needle) {
+        for(var name in this){
+          if(this[name] === needle){
+            return true;
+          }
+        }
+        return false;
+      }
+      var o = {'name': 'egoing', 'city':'seoul'}
+      //console.log(o.contain('graphittie')); // false
+      var a = ['egoing','leezche','graphittie'];
+      //console.log(a.contain('leezche'));  // true
+      for(var name in o){
+        if(o.hasOwnProperty(name)){ /// hasOwnProperty : 어떠한 프로퍼티의 이름이 그 객체의 직접적으로 정의되어있는가를 체크하는 기능
+        console.log(name);
+      }
+    }
+    </script>
+
+  </body>
+</html>

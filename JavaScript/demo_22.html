@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    /////  정적 유효대상  /////
+
+    var i = 5;    // 전역 변수
+
+    function a(){
+      var i = 10;
+      b();
+    }
+
+    function b(){
+      document.write(i);  /// 여기서 i = 5
+    }
+
+    a();
+
+
+    </script>
+
+  </body>
+</html>

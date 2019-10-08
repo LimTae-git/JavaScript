@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      /*
+      boolean의 대체
+      0 : false
+      1 : true
+      '' : flase   빈 문자열은 자바스크립에서 false로 간주
+      undefined : false
+      null : false
+      NaN : false
+      */
+
+      if(0) {
+        alert(1);
+      } // 출력 X : 0은 false로 간주
+
+      if(1) {
+        alert(2);
+      } // 결과 : 2
+
+      if(!''){
+        alert('빈 문자열');
+      } // 결과 : 빈 문자열
+
+      if(!undefined){
+        alert('undefined');
+      } // 결과 : undefined
+
+      var a;
+      if(!a){
+        alert('값이 할당되지 않은 변수');
+      } // 결과 : 값이 할당되지 않은 변수
+
+      if(!null){
+        alert('null');
+      } // 결과 : null
+
+      if(!NaN){
+        alert('NaN');
+      } // 결과 : NaN
+      
+    </script>
+
+  </body>
+</html>

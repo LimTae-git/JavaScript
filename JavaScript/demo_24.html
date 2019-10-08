@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      /*
+      클로저
+      내부함수가 외부함수의 맥락에 접근할수 있는것을 가르킨다
+      */
+
+/*
+      function outter(){
+        function inner(){
+          var title = 'coding everybody';
+          alert(title);
+        }
+        inner();
+      }
+*/
+
+/*
+      function outter(){
+        var title = 'coding everybody'; /// 지역변수
+        function inner(){
+          alert(title);   /// 내부함수는 외부함수의 지역변수에 접근할수 있다.
+        }
+        inner();
+      }
+      outter();
+*/
+
+/*
+      function outter(){
+        var title = 'coding everybody';
+        return function(){
+          alert(title);
+        }
+      }
+      var inner = outter();
+      inner();
+*/
+
+/*
+      function factory_movie(title){
+        return {
+          get_title : function (){
+            return title;
+          },
+          set_title : function(_title){
+            title = _title
+          }
+        }
+      }
+      ghost = factory_movie('Ghost in the shell');
+      matrix = factory_movie('Matrix');
+      alert(ghost.get_title());
+      alert(matrix.get_title());
+      ghost.set_title('공각기동대')
+*/
+
+      var arr = []
+      for(var i = 0; i < 5; i++){
+        arr[i] = function(id){
+          return function(){
+            return id;
+          }
+        }(i);
+      }
+      for(var index in arr){
+        console.log(arr[index]());
+      }   //// 결과 0 1 2 3 4
+
+    </script>
+
+  </body>
+</html>

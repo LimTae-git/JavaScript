@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      /////   함수  /////
+      /// 전역변수와 지역변수 ///
+
+/*
+      var vscope = 'global';
+      function fscope(){
+        vscope = 'local';
+        alert(vscope);
+      }
+      fscope();   /// 결과 : local
+*/
+
+/*
+      var vscope = 'global';
+      function fscope(){
+        alert(vscope);
+      }
+
+      function fscope2(){
+        alert(vscope);
+      }
+
+      fscope();
+      fscope2();    /// 결과 : local 2번
+*/
+
+/*
+      var vscope = 'global';
+      function fscope(){
+        var vscope = 'local';
+        var lv = 'local variables';
+        alert(lv);
+      }
+
+      fscope();     // lv 결과인 local variables
+      alert(lv);    // undefined 함수 내에서 만들어진 lv 라는 변수는 지역변수이기 때문에
+*/
+
+/*
+      var vscope = 'global';
+      function fscope(){
+        var vscope = 'local';
+      }
+      fscope();
+      alert(vscope);  /// 결과 : global // local 변수를 만들 때 var을 쓰면 그 뒤에 따라오는 변수는 local 변수가 된다.
+
+      var vscope = 'global';
+      function fscope(){
+        vscope = 'local';
+      }
+      fscope();
+      alert(vscope);   /// 결과 : local
+*/
+
+/*
+      var vscope = 'global';
+      function fscope(){
+        var vscope = 'local';
+        vscope = 'local';
+      }
+      fscope();
+      alert(vscope);  // 결과 : global
+*/
+    </script>
+
+  </body>
+</html>

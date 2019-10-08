@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      ///// prototype : 원래의 형태, 원형 /////
+      /*
+      생성자 : 기본적으로 함수
+       함수에 new를 붙이게되면 그냥 함수가 아니라 생성자 함수가 된다.
+       그 실행된 결과는 새로운 객체를 만들어서 객체를 리턴
+
+       */
+
+/*
+      function Ultra(){}
+      Ultra.prototype.ultraprop = true;
+
+      function Super(){}
+      Super.prototype = new Ultra();
+
+      function Sub(){}
+      Sub.prototype = new Super();
+
+      var o = new Sub();
+      console.log(o.ultraProp);
+*/
+
+      function Ultra(){}
+      Ultra.prototype.ultraProp = true;
+
+      function Super(){}
+      var t = new Ultra();
+
+      Super.prototype = t;
+
+      function Sub(){}
+      var s = new Super();
+
+      Sub.prototype = s;
+
+      var o = new Sub();
+      console.log(o.ultraProp);
+    </script>
+
+  </body>
+</html>
